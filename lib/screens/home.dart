@@ -1,4 +1,4 @@
-import 'package:car/custom_templages/scaffold_template.dart';
+import 'package:car/custom_templates/scaffold_template.dart';
 import 'package:car/util/constants.dart';
 import 'package:car/util/constants/image_strings.dart';
 
@@ -13,7 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  
+
   TextEditingController _usernameController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
