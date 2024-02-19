@@ -1,3 +1,4 @@
+import 'package:car/custom_templages/scaffold_template.dart';
 import 'package:car/util/constants.dart';
 import 'package:car/util/constants/image_strings.dart';
 
@@ -12,6 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  
   TextEditingController _usernameController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -19,13 +21,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _usernameController.dispose();
     _passwordController.dispose();
@@ -33,68 +33,65 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Center(
-            child: Column(
-              children: [
-                addVerticalSpace(50),
-                Center(child: Image.asset(TImages.appLogo)),
-                addVerticalSpace(40),
-                getLoginFormContent()
-              ],
-            ),
-          ),
+    return KScaffold(
+        body: Center(
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(child: Image.asset(TImages.appLogo)),
+            Padding(
+                padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
+                child: getLoginFormContent())
+          ],
         ),
       ),
-    );
+    ));
   }
 
   Widget getLoginFormContent() {
-    return Container(
-      child: Expanded(
-        child: Form(
-          key: _loginFormKey,
-          child: ListView(
-            children: [
-              getLoginTextField(Icons.person, "Username", _usernameController,
-                  "Enter Username", false),
-              getLoginTextField(Icons.key, "Password", _passwordController,
-                  "Enter Password", true),
-              addVerticalSpace(10),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: InkWell(
-                    onTap: () {},
-                    child: Text(
-                      "Trouble logging in?",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(decoration: TextDecoration.underline),
-                    ),
+    return Form(
+      key: _loginFormKey,
+      child: Container(
+        child: Expanded(
+            child: Column(
+          children: [
+            getLoginTextField(Icons.person, "Username", _usernameController,
+                "Enter Username", false),
+            getLoginTextField(Icons.key, "Password", _passwordController,
+                "Enter Password", true),
+            addVerticalSpace(10),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  onTap: () {},
+                  child: Text(
+                    "Trouble logging in?",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(decoration: TextDecoration.underline),
                   ),
                 ),
               ),
-              addVerticalSpace(10),
-              ElevatedButton(
-                onPressed: () {
-                  if (_loginFormKey.currentState!.validate()) {}
-                },
-                child: const Text("Log In"),
-              ),
-              addVerticalSpace(10),
-              OutlinedButton(
-                onPressed: () {},
-                child: const Text("Sign Up"),
-              )
-            ],
-          ),
-        ),
+            ),
+            addVerticalSpace(10),
+            ElevatedButton(
+              onPressed: () {
+                if (_loginFormKey.currentState!.validate()) {}
+              },
+              child: const Text("Log In"),
+            ),
+            addVerticalSpace(10),
+            OutlinedButton(
+              onPressed: () {},
+              child: const Text("Sign Up"),
+            )
+          ],
+        )),
       ),
     );
   }
@@ -106,6 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Row(
         children: [
           Icon(lableIcon),
+          addHorizontalSpace(10),
           Expanded(
               child: TextFormField(
             controller: txtController,
@@ -122,7 +120,6 @@ class _LoginScreenState extends State<LoginScreen> {
               }
             },
             decoration: InputDecoration(
-              // labelStyle: TextStyle(color: COLOR_GREEN_ACCENT),
               labelText: hinttxt,
               hintText: hinttxt,
               helperText: " ",

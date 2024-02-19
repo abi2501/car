@@ -12,6 +12,7 @@ class TAppBarTheme {
     elevation: 0,
     centerTitle: false,
     iconTheme: IconThemeData(color: Colors.black, size: 24),
+    
   );
 }
 

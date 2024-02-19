@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 const COLOR_LIGHT_GREY = Color(0xFFF49454F);
 const COLOR_DARK_GREY = Color(0xFF2C2A2A);
-
 const COLOR_GREEN_ACCENT = Color(0xFF02783F);
 
 const TextTheme TEXT_THEME_DEFAULT = TextTheme(

@@ -16,7 +16,6 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonThme,
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
-
   );
 
   //https://www.youtube.com/watch?v=Ct9CrMegezQ&list=PL5jb9EteFAOAusKTSuJ5eRl1BapQmMDT6&index=3
