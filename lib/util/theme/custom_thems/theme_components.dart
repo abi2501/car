@@ -12,7 +12,6 @@ class TAppBarTheme {
     elevation: 0,
     centerTitle: false,
     iconTheme: IconThemeData(color: Colors.black, size: 24),
-    
   );
 }
 
@@ -85,7 +84,7 @@ class TOutlinedButtonTheme {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(4),
       ),
-      // minimumSize: const Size(200, 40),
+      minimumSize: const Size(200, 40),
       textStyle: const TextStyle(
           fontSize: 16,
           color: Colors.white,
